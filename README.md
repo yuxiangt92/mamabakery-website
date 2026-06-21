@@ -13,7 +13,7 @@ birthday bakery in West Los Angeles. No build step — open `index.html` in a br
 - **Text / menu / prices:** edit directly in `index.html`. Prices are plain text in
   the `.m-list .row` blocks of the Menu section.
 - **Brand name / email / phone / socials:** search `index.html` for `Mama Bakery`,
-  `hello@mamabakery.com`, `3105550142`, and the social `href="https://..."`
+  `hello@mamabakery.com`, `+13105550142` (tel: link) and `(310) 555-0142` (display text), and the social `href="https://..."`
   links and replace. Also update `BAKERY_EMAIL` in `js/main.js`.
 - **Photos:** add files to `images/`, then replace the matching `<!-- IMAGE SLOT -->`
   placeholder in `index.html` with `<img src="images/your-file.jpg" alt="description">`.

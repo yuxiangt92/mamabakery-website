@@ -1,7 +1,7 @@
 :root{
   --cream:#FBF6EE; --cream-2:#F4EADB; --apricot:#E7B58C; --apricot-deep:#D49A6A;
   --oat:#E9DCC6; --sage:#9DAE8B; --sage-deep:#7C8E6B; --ink:#4A3F35; --ink-soft:#7A6B5C;
-  --white:#fff; --shadow:0 18px 40px -22px rgba(74,63,53,.45);
+  --shadow:0 18px 40px -22px rgba(74,63,53,.45);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -24,7 +24,7 @@ nav{display:flex;align-items:center;justify-content:space-between;height:76px;ga
 .btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px -8px var(--apricot-deep)}
 .btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--apricot);box-shadow:none}
 .nav-toggle{display:none;background:none;border:none;font-size:1.6rem;color:var(--ink);cursor:pointer;line-height:1}
-@media(max-width:760px){
+@media(max-width:860px){
   .navlinks{display:none;position:absolute;top:76px;left:0;right:0;flex-direction:column;gap:0;background:var(--cream);border-bottom:1px solid var(--oat);margin-left:0;padding:8px 0}
   .navlinks.open{display:flex}
   .navlinks a{padding:14px 28px;border-top:1px solid var(--oat)}
@@ -59,7 +59,7 @@ section.pad{padding:84px 0}
 /* VALUES */
 .values{background:var(--cream-2);border-top:1px solid var(--oat);border-bottom:1px solid var(--oat)}
 .values .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;padding-top:26px;padding-bottom:26px}
-.value{display:flex;align-items:center;gap:12px;font-weight:600;color:var(--ink-soft)}
+.value{display:flex;align-items:center;gap:12px;font-weight:600;color:var(--ink-soft);flex:1 1 200px}
 .value .ic{width:42px;height:42px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:1.2rem;box-shadow:0 6px 14px -8px rgba(0,0,0,.25)}
 
 /* FOOTER */
@@ -80,7 +80,7 @@ footer .fineprint{margin-top:8px}
 .m4{background:linear-gradient(140deg,#E7DECB,#D9C39A)}
 .m-body{padding:22px 24px 26px;flex:1;display:flex;flex-direction:column}
 .m-body h3{font-size:1.4rem;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
-.price{font-family:'Nunito Sans';font-weight:700;color:var(--apricot-deep);font-size:1.05rem;white-space:nowrap}
+.price{font-family:'Nunito Sans',sans-serif;font-weight:700;color:var(--apricot-deep);font-size:1.05rem;white-space:nowrap}
 .m-body p{color:var(--ink-soft);font-size:.96rem;margin-top:8px}
 .m-list{margin-top:14px;display:flex;flex-direction:column;gap:7px;font-size:.92rem}
 .m-list .row{display:flex;justify-content:space-between;border-bottom:1px dashed var(--oat);padding-bottom:6px;color:var(--ink-soft)}
