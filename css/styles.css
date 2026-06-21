@@ -77,7 +77,7 @@ footer .fineprint{margin-top:8px}
 .m1{background:linear-gradient(140deg,#F6DCC4,#E7B58C)}
 .m2{background:linear-gradient(140deg,#EAE2CC,#C9D3B4)}
 .m3{background:linear-gradient(140deg,#F3D9D2,#E9B6A8)}
-.m4{background:linear-gradient(140deg,#E7DECb,#D9C39A)}
+.m4{background:linear-gradient(140deg,#E7DECB,#D9C39A)}
 .m-body{padding:22px 24px 26px;flex:1;display:flex;flex-direction:column}
 .m-body h3{font-size:1.4rem;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
 .price{font-family:'Nunito Sans';font-weight:700;color:var(--apricot-deep);font-size:1.05rem;white-space:nowrap}
@@ -124,10 +124,10 @@ footer .fineprint{margin-top:8px}
 .socials{display:flex;gap:14px;margin-top:26px}
 .socials a{width:46px;height:46px;border-radius:14px;background:rgba(255,255,255,.16);display:grid;place-items:center;font-size:1.15rem;transition:background .2s,transform .2s}
 .socials a:hover{background:rgba(255,255,255,.3);transform:translateY(-3px)}
-form{background:#fff;border-radius:24px;padding:30px;box-shadow:var(--shadow)}
-form label{display:block;font-size:.85rem;font-weight:700;color:var(--ink);margin:0 0 7px}
-form input,form textarea,form select{width:100%;padding:13px 16px;border:1.5px solid var(--oat);border-radius:14px;font-family:inherit;font-size:.95rem;margin-bottom:18px;background:var(--cream);color:var(--ink)}
-form input:focus,form textarea:focus,form select:focus{outline:none;border-color:var(--apricot-deep)}
-form textarea{resize:vertical;min-height:110px}
-form .btn{width:100%;border:none;cursor:pointer;font-family:inherit;font-size:1rem}
+.contact form{background:#fff;border-radius:24px;padding:30px;box-shadow:var(--shadow)}
+.contact form label{display:block;font-size:.85rem;font-weight:700;color:var(--ink);margin:0 0 7px}
+.contact form input,.contact form textarea,.contact form select{width:100%;padding:13px 16px;border:1.5px solid var(--oat);border-radius:14px;font-family:inherit;font-size:.95rem;margin-bottom:18px;background:var(--cream);color:var(--ink)}
+.contact form input:focus,.contact form textarea:focus,.contact form select:focus{outline:none;border-color:var(--apricot-deep)}
+.contact form textarea{resize:vertical;min-height:110px}
+.contact form .btn{width:100%;border:none;cursor:pointer;font-family:inherit;font-size:1rem}
 @media(max-width:760px){.c-grid{grid-template-columns:1fr}}

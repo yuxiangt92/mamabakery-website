@@ -1,7 +1,7 @@
 # Images
 
 Drop real photos here, then update the matching slot in `index.html`.
-Recommended: square-ish JP/WebP, ~1200px on the long edge, optimized < 300KB.
+Recommended: square-ish JPG/WebP, ~1200px on the long edge, optimized < 300KB.
 
 Suggested files (referenced by index.html once you add them):
 - hero.jpg — signature birthday cake (hero section)
