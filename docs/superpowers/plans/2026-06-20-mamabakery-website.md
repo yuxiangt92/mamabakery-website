@@ -1,4 +1,4 @@
-# Little Sprout Bakery Website Implementation Plan
+# Mama Bakery Website Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
@@ -11,10 +11,10 @@
 ## Global Constraints
 
 - Aesthetic must match `prototypes/style-a.html`: palette cream `#FBF6EE` / apricot `#E7B58C` / apricot-deep `#D49A6A` / oat `#E9DCC6` / sage `#9DAE8B` / sage-deep `#7C8E6B`, ink `#4A3F35`, ink-soft `#7A6B5C`; headings Fraunces (serif), body Nunito Sans.
-- Brand name placeholder: **Little Sprout Bakery**. Must appear in exactly one easy-to-edit place per occurrence (no logic depends on it).
+- Brand name placeholder: **Mama Bakery**. Must appear in exactly one easy-to-edit place per occurrence (no logic depends on it).
 - Selling points to keep visible: **Organic · Low-Sugar · No Artificial Anything · Small-Batch / Made-Fresh**.
 - Language: English-primary.
-- Contact email placeholder: `hello@littlesproutbakery.com`. Phone placeholder: `(310) 555-0142`. Location: `West Los Angeles · pickup & local delivery`.
+- Contact email placeholder: `hello@mamabakery.com`. Phone placeholder: `(310) 555-0142`. Location: `West Los Angeles · pickup & local delivery`.
 - No backend. Contact form submits via `mailto:`. No external services beyond Google Fonts CDN.
 - Fully responsive; must render cleanly at 375px, 768px, and 1140px widths.
 - All prices shown as "starting at"/ranges (every order is custom).
@@ -58,7 +58,7 @@ To switch a placeholder to a photo, see the comment marked `<!-- IMAGE SLOT -->`
 Create `js/main.js`:
 
 ```javascript
-// Little Sprout Bakery — site interactions
+// Mama Bakery — site interactions
 // (mobile nav toggle, smooth scroll, mailto contact form)
 // Populated in later tasks.
 ```
@@ -71,8 +71,8 @@ Create `js/main.js`:
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Little Sprout Bakery — organic, low-sugar birthday cakes & cupcakes for kids in West Los Angeles. Made fresh, naturally sweetened, no artificial anything." />
-<title>Little Sprout Bakery · Organic Birthday Cakes for Kids · West LA</title>
+<meta name="description" content="Mama Bakery — organic, low-sugar birthday cakes & cupcakes for kids in West Los Angeles. Made fresh, naturally sweetened, no artificial anything." />
+<title>Mama Bakery · Organic Birthday Cakes for Kids · West LA</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
@@ -81,7 +81,7 @@ Create `js/main.js`:
 <body>
 <header>
   <nav class="wrap">
-    <a class="brand" href="#top"><span class="leaf"></span> Little Sprout</a>
+    <a class="brand" href="#top"><span class="leaf"></span> Mama Bakery</a>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
     <div class="navlinks" id="navlinks">
       <a href="#menu">Menu</a><a href="#gallery">Gallery</a><a href="#about">Our Story</a><a href="#contact">Contact</a>
@@ -96,9 +96,9 @@ Create `js/main.js`:
 
 <footer>
   <div class="wrap">
-    <a class="brand" href="#top"><span class="leaf"></span> Little Sprout Bakery</a>
+    <a class="brand" href="#top"><span class="leaf"></span> Mama Bakery</a>
     <p>Organic · Low-Sugar · Made with love in West Los Angeles</p>
-    <p class="fineprint">© 2026 Little Sprout Bakery</p>
+    <p class="fineprint">© 2026 Mama Bakery</p>
   </div>
 </footer>
 <script src="js/main.js"></script>
@@ -161,7 +161,7 @@ footer .fineprint{margin-top:8px}
 - [ ] **Step 4: Verify the shell renders**
 
 Run: `open index.html` (macOS)
-Expected: Cream page with a sticky header (leaf + "Little Sprout" brand, nav links, apricot "Order a Cake" button) and a dark footer. Empty middle. No console errors. At ≤760px width the nav links collapse and a ☰ button appears (clicking does nothing yet — wired in Task 5).
+Expected: Cream page with a sticky header (leaf + "Mama Bakery" brand, nav links, apricot "Order a Cake" button) and a dark footer. Empty middle. No console errors. At ≤760px width the nav links collapse and a ☰ button appears (clicking does nothing yet — wired in Task 5).
 
 - [ ] **Step 5: Commit**
 
@@ -493,7 +493,7 @@ Add the contact section (info, socials, message form) and wire up all JavaScript
     </div>
     <div class="c-grid">
       <div class="c-info">
-        <div class="line"><span class="ic">📧</span> <a href="mailto:hello@littlesproutbakery.com">hello@littlesproutbakery.com</a></div>
+        <div class="line"><span class="ic">📧</span> <a href="mailto:hello@mamabakery.com">hello@mamabakery.com</a></div>
         <div class="line"><span class="ic">📱</span> <a href="tel:+13105550142">(310) 555-0142</a> · text friendly</div>
         <div class="line"><span class="ic">📍</span> West Los Angeles · pickup &amp; local delivery</div>
         <p>Prefer social? Send us a DM — we love seeing your party themes.</p>
@@ -548,7 +548,7 @@ form .btn{width:100%;border:none;cursor:pointer;font-family:inherit;font-size:1r
 - [ ] **Step 3: Implement `js/main.js`**
 
 ```javascript
-// Little Sprout Bakery — site interactions
+// Mama Bakery — site interactions
 
 // 1) Mobile nav toggle
 const navToggle = document.querySelector('.nav-toggle');
@@ -568,7 +568,7 @@ if (navToggle && navLinks) {
 }
 
 // 2) Contact form -> mailto (no backend in v1)
-const BAKERY_EMAIL = 'hello@littlesproutbakery.com';
+const BAKERY_EMAIL = 'hello@mamabakery.com';
 const form = document.getElementById('contact-form');
 if (form) {
   form.addEventListener('submit', (e) => {
@@ -600,7 +600,7 @@ if (form) {
 Run: `open index.html`
 Expected:
 - Apricot-gradient contact section: left column shows clickable email (mailto), phone (tel), location, and four social tiles; right column shows a white form card.
-- Filling the form and clicking "Send Message" opens the default mail client with a pre-filled email to `hello@littlesproutbakery.com` (subject + body populated). No page navigation/error.
+- Filling the form and clicking "Send Message" opens the default mail client with a pre-filled email to `hello@mamabakery.com` (subject + body populated). No page navigation/error.
 - At ≤760px: tapping ☰ opens the nav dropdown; tapping a link scrolls and closes it.
 - All nav links (Menu, Gallery, Our Story, Contact) scroll to their sections smoothly.
 
@@ -628,7 +628,7 @@ Verify the whole page across breakpoints, fix any layout issues found, and add a
 - [ ] **Step 1: Create top-level `README.md`**
 
 ```markdown
-# Little Sprout Bakery — Website
+# Mama Bakery — Website
 
 Single-page static website (Soft Organic style) for an organic, low-sugar kids'
 birthday bakery in West Los Angeles. No build step — open `index.html` in a browser.
@@ -642,8 +642,8 @@ birthday bakery in West Los Angeles. No build step — open `index.html` in a br
 ## Editing content
 - **Text / menu / prices:** edit directly in `index.html`. Prices are plain text in
   the `.m-list .row` blocks of the Menu section.
-- **Brand name / email / phone / socials:** search `index.html` for `Little Sprout`,
-  `hello@littlesproutbakery.com`, `3105550142`, and the social `href="https://..."`
+- **Brand name / email / phone / socials:** search `index.html` for `Mama Bakery`,
+  `hello@mamabakery.com`, `3105550142`, and the social `href="https://..."`
   links and replace. Also update `BAKERY_EMAIL` in `js/main.js`.
 - **Photos:** add files to `images/`, then replace the matching `<!-- IMAGE SLOT -->`
   placeholder in `index.html` with `<img src="images/your-file.jpg" alt="description">`.
