@@ -16,7 +16,7 @@ img{max-width:100%;display:block}
 header{position:sticky;top:0;z-index:50;background:rgba(251,246,238,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--oat)}
 nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:18px}
 .brand{font-family:'Fraunces',serif;font-size:1.45rem;font-weight:600;display:flex;align-items:center;gap:10px}
-.brand .leaf{width:30px;height:30px;border-radius:50% 50% 50% 0;background:linear-gradient(135deg,var(--sage),var(--sage-deep));display:inline-block;transform:rotate(-30deg);flex-shrink:0}
+.brand .leaf{width:34px;height:34px;display:inline-block;flex-shrink:0}
 .navlinks{display:flex;gap:34px;font-size:.96rem;margin-left:auto}
 .navlinks a{position:relative;padding:4px 0;color:var(--ink-soft);transition:color .2s}
 .navlinks a:hover{color:var(--ink)}

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="720" height="720">
+  
+  <defs>
+    <path id="top" d="M30,120 A90,90 0 0 1 210,120"></path>
+    <path id="bot" d="M210,128 A82,82 0 0 1 30,128"></path>
+  </defs>
+  <circle cx="120" cy="120" r="114" fill="none" stroke="#E8A33D" stroke-width="2.5"></circle>
+  <circle cx="120" cy="120" r="106" fill="none" stroke="#E8A33D" stroke-width="1" stroke-dasharray="1.5 5" stroke-linecap="round"></circle>
+  <text class="top"><textPath href="#top" startOffset="50%" text-anchor="middle">MAMA BAKERY</textPath></text>
+  <text class="bot"><textPath href="#bot" startOffset="50%" text-anchor="middle">ORGANIC · LOW SUGAR</textPath></text>
+  <g stroke="#E8A33D" stroke-width="3.4" stroke-linecap="round">
+    <line x1="120" y1="80" x2="120" y2="66"></line>
+    <line x1="134.4" y1="83.2" x2="139.4" y2="70.3"></line>
+    <line x1="105.6" y1="83.2" x2="100.6" y2="70.3"></line>
+    <line x1="146" y1="92.1" x2="155.2" y2="84.4"></line>
+    <line x1="94" y1="92.1" x2="84.8" y2="84.4"></line>
+  </g>
+  <path d="M99,131 L141,131 L135,172 L105,172 Z" fill="#E8A33D"></path>
+  <g stroke="#C9822E" stroke-width="2" stroke-linecap="round">
+    <line x1="110" y1="134" x2="108" y2="169"></line>
+    <line x1="120" y1="134" x2="120" y2="170"></line>
+    <line x1="130" y1="134" x2="132" y2="169"></line>
+  </g>
+  <ellipse cx="120" cy="129" rx="27" ry="9" fill="#7C9C6B"></ellipse>
+  <ellipse cx="104" cy="120" rx="15" ry="12" fill="#7C9C6B"></ellipse>
+  <ellipse cx="136" cy="120" rx="15" ry="12" fill="#7C9C6B"></ellipse>
+  <ellipse cx="120" cy="110" rx="17" ry="14" fill="#8BAE78"></ellipse>
+  <circle cx="120" cy="95" r="7" fill="#D9694C"></circle>
+  <path d="M120,89 Q124,82 130,82" fill="none" stroke="#7C9C6B" stroke-width="2.2" stroke-linecap="round"></path>
+</svg>

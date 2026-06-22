@@ -1,0 +1,43 @@
+MAMA BAKERY — BRAND GUIDE
+Organic · Low Sugar · Family Baking
+mamabakery.org  ·  mamabakery.org@gmail.com
+
+------------------------------------------------------------
+LOGO FILES
+------------------------------------------------------------
+SVG/  (vector — scales to any size, best for print & web)
+  primary-badge.svg    The round seal. Default mark everywhere.
+  logo-horizontal.svg  Icon + wordmark. Headers, signage, web nav.
+  logo-reversed.svg    On amber — for dark/colored backgrounds.
+  icon-circle.svg      Circular app/social avatar.
+  app-icon.svg         Rounded-square app icon / favicon.
+
+PNG/  (transparent, high-resolution raster — for slides, social, docs)
+  same set, ready to drop into any app.
+
+------------------------------------------------------------
+COLORS
+------------------------------------------------------------
+Sunshine Amber      #E8A33D   primary
+Matcha Green        #7C9C6B   organic accent / frosting
+Frosting Green Lt   #8BAE78
+Cherry Terracotta   #D9694C   accent
+Caramel             #C9822E   shade / liner lines
+Warm Cream          #FBF6EE   surface / reversed type
+Cocoa Ink           #4A3B2F   text
+
+------------------------------------------------------------
+TYPE
+------------------------------------------------------------
+Display / wordmark : Baloo 2 (700)        — rounded, friendly
+Body / labels      : Nunito (500/600/700) — clean, warm
+Both free on Google Fonts.
+
+------------------------------------------------------------
+USAGE
+------------------------------------------------------------
+• Keep clear space around the logo equal to the cherry's height.
+• Use the reversed lockup on amber or photos; never the dark
+  wordmark on a dark background.
+• Don't recolor, stretch, or add effects to the mark.
+• Minimum size: badge 32px, icon 24px.
