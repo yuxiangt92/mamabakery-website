@@ -140,7 +140,7 @@ footer .fineprint{margin-top:8px}
 
 /* ── Phone (≤540px) ───────────────────────────── */
 @media(max-width:540px){
-  .wrap{padding:0 24px}
+  .wrap{padding:0 32px}
   .hero{padding:28px 0 24px}
   .hero-grid{gap:18px}
   .hero h1{font-size:1.9rem;margin:10px 0 12px}
