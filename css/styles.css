@@ -140,14 +140,14 @@ footer .fineprint{margin-top:8px}
 
 /* ── Phone (≤540px) ───────────────────────────── */
 @media(max-width:540px){
-  .wrap{padding:0 18px}
+  .wrap{padding:0 24px}
   .hero{padding:28px 0 24px}
   .hero-grid{gap:18px}
   .hero h1{font-size:1.9rem;margin:10px 0 12px}
   .hero p.lead{font-size:.97rem;margin-bottom:18px}
   .hero-img{aspect-ratio:4/3}
   .hero-cta{gap:10px}
-  .hero-cta .btn{padding:11px 20px;font-size:.88rem}
+  .hero-cta .btn{padding:13px 26px;font-size:.9rem}
   section.pad{padding:48px 0}
   .sec-head{margin-bottom:26px}
   .sec-head h2{margin:6px 0}
@@ -158,7 +158,7 @@ footer .fineprint{margin-top:8px}
   .m-body h3{flex-direction:column;align-items:flex-start;gap:2px;font-size:1.15rem}
   .gal-grid{gap:10px}
   .about-img{aspect-ratio:16/9;font-size:4rem}
-  .contact form{padding:20px 16px;border-radius:18px}
+  .contact form{padding:20px 20px;border-radius:18px}
   .contact form input,.contact form textarea,.contact form select{padding:11px 13px;border-radius:11px;margin-bottom:14px}
   footer{padding:34px 0}
 }
