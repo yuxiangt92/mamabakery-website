@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html-root">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,9 +18,10 @@
     <a class="brand" href="#top"><img class="leaf" src="images/logo-icon.svg" alt="" aria-hidden="true" /> Mama Bakery</a>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
     <div class="navlinks" id="navlinks">
-      <a href="#menu">Menu</a><a href="#gallery">Gallery</a><a href="#about">Our Story</a><a href="#contact">Contact</a>
+      <a href="#menu" data-i18n="nav.menu">Menu</a><a href="#gallery" data-i18n="nav.gallery">Gallery</a><a href="#about" data-i18n="nav.about">Our Story</a><a href="#contact" data-i18n="nav.contact">Contact</a>
     </div>
-    <a class="btn nav-cta" href="#contact">Order a Cake</a>
+    <a class="btn nav-cta" href="#contact" data-i18n="nav.cta">Order a Cake</a>
+    <button class="lang-toggle" id="lang-toggle" aria-label="Switch language">EN / 中</button>
   </nav>
 </header>
 
@@ -29,12 +30,12 @@
   <section class="hero wrap">
     <div class="hero-grid">
       <div>
-        <span class="tag">West Los Angeles · Made to Order</span>
-        <h1>Wholesome cakes for your little one's <em>big day</em>.</h1>
-        <p class="lead">Organic, low-sugar birthday cakes &amp; cupcakes — baked by a mama who reads every label so you don't have to.</p>
+        <span class="tag" data-i18n="hero.tag">West Los Angeles · Made to Order</span>
+        <h1 data-i18n="hero.title" data-i18n-html="true">Wholesome cakes for your little one's <em>big day</em>.</h1>
+        <p class="lead" data-i18n="hero.lead">Organic, low-sugar birthday cakes &amp; cupcakes — baked by a mama who reads every label so you don't have to.</p>
         <div class="hero-cta">
-          <a class="btn" href="#menu">See the Menu</a>
-          <a class="btn ghost" href="#contact">Ask a Question</a>
+          <a class="btn" href="#menu" data-i18n="hero.menu">See the Menu</a>
+          <a class="btn ghost" href="#contact" data-i18n="hero.ask">Ask a Question</a>
         </div>
       </div>
       <div class="hero-img">
@@ -46,10 +47,10 @@
   <!-- VALUES -->
   <div class="values">
     <div class="wrap">
-      <div class="value"><span class="ic">🌾</span> Certified Organic</div>
-      <div class="value"><span class="ic">🍯</span> Naturally Low-Sugar</div>
-      <div class="value"><span class="ic">🚫</span> No Artificial Anything</div>
-      <div class="value"><span class="ic">👩‍🍳</span> Small-Batch &amp; Fresh</div>
+      <div class="value"><span class="ic">🌾</span> <span data-i18n="val.organic">Certified Organic</span></div>
+      <div class="value"><span class="ic">🍯</span> <span data-i18n="val.sugar">Naturally Low-Sugar</span></div>
+      <div class="value"><span class="ic">🚫</span> <span data-i18n="val.noart">No Artificial Anything</span></div>
+      <div class="value"><span class="ic">👩‍🍳</span> <span data-i18n="val.fresh">Small-Batch &amp; Fresh</span></div>
     </div>
   </div>
 
@@ -57,32 +58,32 @@
   <section class="pad" id="menu">
     <div class="wrap">
       <div class="sec-head">
-        <span class="tag">The Menu</span>
-        <h2>Sweet things, thoughtfully made</h2>
-        <p>Every order is custom. Prices below are starting points — tell us your theme and we'll make it magic.</p>
+        <span class="tag" data-i18n="menu.tag">The Menu</span>
+        <h2 data-i18n="menu.title">Sweet things, thoughtfully made</h2>
+        <p data-i18n="menu.desc">Every order is custom. Prices below are starting points — tell us your theme and we'll make it magic.</p>
       </div>
       <div class="menu-grid">
         <div class="m-card">
           <div class="m-thumb m1"><img src="images/birthday_cake.png" alt="Organic birthday cake topped with fresh berries and mint" /></div>
           <div class="m-body">
-            <h3>Custom Birthday Cakes <span class="price">from $48</span></h3>
-            <p>Two-layer organic sponge, naturally sweetened, decorated to your theme.</p>
+            <h3 data-i18n="menu.cake.name" data-i18n-html="true">Custom Birthday Cakes <span class="price">from $48</span></h3>
+            <p data-i18n="menu.cake.desc">Two-layer organic sponge, naturally sweetened, decorated to your theme.</p>
             <div class="m-list">
-              <div class="row"><span>4" — serves 4–6</span><b>$48</b></div>
-              <div class="row"><span>6" — serves 6–8</span><b>$58</b></div>
-              <div class="row"><span>8" — serves 12–16</span><b>$68</b></div>
-              <div class="row"><span>Add fresh seasonal fruit</span><b>+$15</b></div>
+              <div class="row"><span data-i18n="menu.cake.s4">4" — serves 4–6</span><b>$48</b></div>
+              <div class="row"><span data-i18n="menu.cake.s6">6" — serves 6–8</span><b>$58</b></div>
+              <div class="row"><span data-i18n="menu.cake.s8">8" — serves 12–16</span><b>$68</b></div>
+              <div class="row"><span data-i18n="menu.cake.fruit">Add fresh seasonal fruit</span><b>+$15</b></div>
             </div>
           </div>
         </div>
         <div class="m-card">
           <div class="m-thumb m2"><img src="images/IMG_3258.JPG" alt="Fruit-topped cupcakes with strawberry, mango, blueberry and blackberry" /></div>
           <div class="m-body">
-            <h3>Cupcakes <span class="price">from $40</span></h3>
-            <p>Fluffy, lightly sweet, topped with whipped honey-buttercream — perfect for parties &amp; favors.</p>
+            <h3 data-i18n="menu.cup.name" data-i18n-html="true">Cupcakes <span class="price">from $40</span></h3>
+            <p data-i18n="menu.cup.desc">Fluffy, lightly sweet, topped with whipped honey-buttercream — perfect for parties &amp; favors.</p>
             <div class="m-list">
-              <div class="row"><span>12 cupcakes</span><b>$40</b></div>
-              <div class="row"><span>18 cupcakes</span><b>$60</b></div>
+              <div class="row"><span data-i18n="menu.cup.s12">12 cupcakes</span><b>$40</b></div>
+              <div class="row"><span data-i18n="menu.cup.s18">18 cupcakes</span><b>$60</b></div>
             </div>
           </div>
         </div>
@@ -94,9 +95,9 @@
   <section class="pad gal" id="gallery">
     <div class="wrap">
       <div class="sec-head">
-        <span class="tag">Gallery</span>
-        <h2>A little look at our work</h2>
-        <p>A few of our recent cakes &amp; cupcakes — naturally sweetened, made fresh to order.</p>
+        <span class="tag" data-i18n="gal.tag">Gallery</span>
+        <h2 data-i18n="gal.title">A little look at our work</h2>
+        <p data-i18n="gal.desc">A few of our recent cakes &amp; cupcakes — naturally sweetened, made fresh to order.</p>
       </div>
       <div class="gal-grid">
         <div class="g"><img src="images/1671.jpg" alt="First-birthday cake with fresh berries and a custom topper" /></div>
@@ -116,12 +117,12 @@
         <!-- IMAGE SLOT: replace .about-img contents with <img src="images/about.jpg" alt="..."> -->
         <div class="about-img">👩‍🍳</div>
         <div>
-          <span class="tag">Our Story</span>
-          <h2>Started in a mama's kitchen</h2>
-          <p>When my own kids couldn't have the sugary cakes at birthday parties, I started baking our own — organic, naturally sweetened, and made with the kind of care only a mom gives.</p>
-          <p>I shop for our ingredients myself, and only at <strong>Whole Foods</strong>, <strong>Sprouts</strong>, and <strong>Bristol Farms</strong> — choosing organic, low-sugar foods I'd happily feed my own family. Nothing else makes it into our kitchen.</p>
-          <p>Today I bake those same cakes for families across West LA. Every order is small-batch, made fresh to order, and free of artificial dyes, preservatives, and refined sugar.</p>
-          <p class="sig">— with love, Mama</p>
+          <span class="tag" data-i18n="about.tag">Our Story</span>
+          <h2 data-i18n="about.title">Started in a mama's kitchen</h2>
+          <p data-i18n="about.p1" data-i18n-html="true">When my own kids couldn't have the sugary cakes at birthday parties, I started baking our own — organic, naturally sweetened, and made with the kind of care only a mom gives.</p>
+          <p data-i18n="about.p2" data-i18n-html="true">I shop for our ingredients myself, and only at <strong>Whole Foods</strong>, <strong>Sprouts</strong>, and <strong>Bristol Farms</strong> — choosing organic, low-sugar foods I'd happily feed my own family. Nothing else makes it into our kitchen.</p>
+          <p data-i18n="about.p3">Today I bake those same cakes for families across West LA. Every order is small-batch, made fresh to order, and free of artificial dyes, preservatives, and refined sugar.</p>
+          <p class="sig" data-i18n="about.sig">— with love, Mama</p>
         </div>
       </div>
     </div>
@@ -131,15 +132,15 @@
   <section class="pad contact" id="contact">
     <div class="wrap">
       <div class="sec-head">
-        <span class="tag">Get in Touch</span>
-        <h2>Let's plan something sweet</h2>
-        <p>Tell us about the birthday and we'll get back to you within a day.</p>
+        <span class="tag" data-i18n="contact.tag">Get in Touch</span>
+        <h2 data-i18n="contact.title">Let's plan something sweet</h2>
+        <p data-i18n="contact.desc">Tell us about the birthday and we'll get back to you within a day.</p>
       </div>
       <div class="c-grid">
         <div class="c-info">
           <div class="line"><span class="ic">📧</span> <a href="mailto:mamabakery.org@gmail.com">mamabakery.org@gmail.com</a></div>
-          <div class="line"><span class="ic">📍</span> West Los Angeles · pickup &amp; local delivery</div>
-          <p>Prefer social? Send us a DM — we love seeing your party themes.</p>
+          <div class="line"><span class="ic">📍</span> <span data-i18n="contact.location">West Los Angeles · pickup &amp; local delivery</span></div>
+          <p data-i18n="contact.social">Prefer social? Send us a DM — we love seeing your party themes.</p>
           <div class="socials">
             <a href="https://instagram.com/" title="Instagram" target="_blank" rel="noopener">📷</a>
             <a href="https://tiktok.com/" title="TikTok" target="_blank" rel="noopener">🎵</a>
@@ -150,15 +151,15 @@
         <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
           <input type="hidden" name="form-name" value="contact" />
           <p hidden><label>Don't fill this out if you're human: <input name="bot-field" /></label></p>
-          <label for="cf-name">Your name</label>
-          <input id="cf-name" name="name" type="text" placeholder="Jane Doe" required />
-          <label for="cf-email">Email</label>
-          <input id="cf-email" name="email" type="email" placeholder="jane@email.com" required />
-          <label for="cf-type">What are we celebrating?</label>
-          <select id="cf-type" name="type"><option>Birthday cake</option><option>Cupcakes</option><option>Something else</option></select>
-          <label for="cf-msg">Tell us more</label>
-          <textarea id="cf-msg" name="message" placeholder="Date, theme, number of guests, any allergies…"></textarea>
-          <button class="btn" type="submit">Send Message</button>
+          <label for="cf-name" data-i18n="form.name">Your name</label>
+          <input id="cf-name" name="name" type="text" data-i18n-ph="form.name.ph" placeholder="Jane Doe" required />
+          <label for="cf-email" data-i18n="form.email">Email</label>
+          <input id="cf-email" name="email" type="email" data-i18n-ph="form.email.ph" placeholder="jane@email.com" required />
+          <label for="cf-type" data-i18n="form.type">What are we celebrating?</label>
+          <select id="cf-type" name="type"><option data-i18n="form.opt.cake">Birthday cake</option><option data-i18n="form.opt.cup">Cupcakes</option><option data-i18n="form.opt.other">Something else</option></select>
+          <label for="cf-msg" data-i18n="form.msg">Tell us more</label>
+          <textarea id="cf-msg" name="message" data-i18n-ph="form.msg.ph" placeholder="Date, theme, number of guests, any allergies…"></textarea>
+          <button class="btn" type="submit" data-i18n="form.submit">Send Message</button>
         </form>
       </div>
     </div>
@@ -168,8 +169,8 @@
 <footer>
   <div class="wrap">
     <a class="brand" href="#top"><img class="leaf" src="images/logo-icon.svg" alt="" aria-hidden="true" /> Mama Bakery</a>
-    <p>Organic · Low-Sugar · Made with love in West Los Angeles</p>
-    <p class="fineprint">© 2026 Mama Bakery</p>
+    <p data-i18n="footer.tagline">Organic · Low-Sugar · Made with love in West Los Angeles</p>
+    <p class="fineprint" data-i18n="footer.copy">© 2026 Mama Bakery</p>
   </div>
 </footer>
 <script src="js/main.js"></script>
