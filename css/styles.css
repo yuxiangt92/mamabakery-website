@@ -106,6 +106,7 @@ footer .fineprint{margin-top:8px}
 .g:nth-child(6){background:linear-gradient(135deg,#9DAE8B,#7C8E6B)}
 .g:nth-child(7){background:linear-gradient(135deg,#E9B6A8,#D49A6A)}
 .g:nth-child(8){background:linear-gradient(135deg,#C9D3B4,#E9DCC6)}
+.g:nth-child(9){background:linear-gradient(135deg,#F6DCC4,#E7B58C)}
 @media(max-width:760px){.gal-grid{grid-template-columns:repeat(2,1fr)}}
 
 /* ABOUT */
