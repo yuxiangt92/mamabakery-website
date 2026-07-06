@@ -108,6 +108,7 @@ footer .fineprint{margin-top:8px}
 .g:nth-child(8){background:linear-gradient(135deg,#C9D3B4,#E9DCC6)}
 .g:nth-child(9){background:linear-gradient(135deg,#F6DCC4,#E7B58C)}
 .g:nth-child(10){background:linear-gradient(135deg,#EAE2CC,#C9D3B4)}
+.g:nth-child(11){background:linear-gradient(135deg,#F3D9D2,#E9B6A8)}
 @media(max-width:760px){.gal-grid{grid-template-columns:repeat(2,1fr)}}
 
 /* ABOUT */
