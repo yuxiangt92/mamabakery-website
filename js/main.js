@@ -266,3 +266,43 @@ if (currentLang !== 'en') setLang(currentLang);
     startX = null;
   }, { passive: true });
 })();
+
+// Menu — compact horizontal image sliders (arrows, dots, native swipe)
+(function menuSliders() {
+  document.querySelectorAll('[data-slider]').forEach((slider) => {
+    const track = slider.querySelector('.m-track');
+    const dotsWrap = slider.querySelector('.m-dots');
+    const imgs = Array.from(track.querySelectorAll('img'));
+    if (imgs.length < 2) {
+      slider.querySelectorAll('.m-arrow').forEach((a) => (a.style.display = 'none'));
+      return;
+    }
+    let cur = 0;
+
+    const dots = imgs.map((_, i) => {
+      const d = document.createElement('button');
+      d.type = 'button';
+      d.className = 'm-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'Photo ' + (i + 1));
+      d.addEventListener('click', () => go(i));
+      dotsWrap.appendChild(d);
+      return d;
+    });
+
+    function paint() {
+      dots.forEach((d, i) => d.classList.toggle('active', i === cur));
+    }
+    function go(i) {
+      cur = (i + imgs.length) % imgs.length;
+      track.scrollTo({ left: cur * track.clientWidth, behavior: 'smooth' });
+      paint();
+    }
+
+    slider.querySelector('.m-prev').addEventListener('click', () => go(cur - 1));
+    slider.querySelector('.m-next').addEventListener('click', () => go(cur + 1));
+    track.addEventListener('scroll', () => {
+      const i = Math.round(track.scrollLeft / track.clientWidth);
+      if (i !== cur) { cur = i; paint(); }
+    }, { passive: true });
+  });
+})();
