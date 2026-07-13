@@ -165,21 +165,69 @@ if (langBtn) {
 
 if (currentLang !== 'en') setLang(currentLang);
 
-// Gallery — click-to-enlarge lightbox (keyboard + swipe)
+// Gallery — center-focused coverflow carousel + click-to-enlarge lightbox
 (function gallery() {
-  const grid = document.getElementById('galGrid');
+  const track = document.getElementById('carTrack');
   const lb = document.getElementById('lightbox');
-  if (!grid || !lb) return;
+  if (!track || !lb) return;
 
-  const tiles = Array.from(grid.querySelectorAll('.g'));
+  const carousel = track.closest('.gal-carousel');
+  const slides = Array.from(track.querySelectorAll('.car-slide'));
+  let active = 0;
+
+  const centerOf = (s) => s.offsetLeft + s.offsetWidth / 2;
+
+  // Leading/trailing space so the first & last slide can reach the centre
+  function pad() {
+    if (!slides.length) return;
+    const p = Math.max(0, (track.clientWidth - slides[0].offsetWidth) / 2);
+    track.style.paddingLeft = track.style.paddingRight = p + 'px';
+  }
+  function refresh() {
+    const mid = track.scrollLeft + track.clientWidth / 2;
+    let best = 0, bd = Infinity;
+    slides.forEach((s, i) => {
+      const d = Math.abs(centerOf(s) - mid);
+      if (d < bd) { bd = d; best = i; }
+    });
+    active = best;
+    slides.forEach((s, i) => s.classList.toggle('is-active', i === best));
+  }
+  function goTo(i, smooth = true) {
+    i = Math.max(0, Math.min(slides.length - 1, i));
+    track.scrollTo({ left: centerOf(slides[i]) - track.clientWidth / 2, behavior: smooth ? 'smooth' : 'auto' });
+  }
+
+  let raf;
+  track.addEventListener('scroll', () => {
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(refresh);
+  }, { passive: true });
+  window.addEventListener('resize', () => { pad(); goTo(active, false); refresh(); });
+
+  carousel.querySelector('.car-prev').addEventListener('click', () => goTo(active - 1));
+  carousel.querySelector('.car-next').addEventListener('click', () => goTo(active + 1));
+  track.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(active - 1); }
+    else if (e.key === 'ArrowRight') { e.preventDefault(); goTo(active + 1); }
+  });
+
+  // Click a side photo to bring it to centre; click the centre one to enlarge
+  slides.forEach((s, i) => s.addEventListener('click', () => {
+    if (i === active) open(i); else goTo(i);
+  }));
+
+  pad();
+  requestAnimationFrame(() => { goTo(0, false); refresh(); });
+
+  // Lightbox
   const lbImg = document.getElementById('lbImg');
   const lbCap = document.getElementById('lbCap');
   let idx = 0;
 
   function show(i) {
-    if (!tiles.length) return;
-    idx = (i + tiles.length) % tiles.length;
-    const img = tiles[idx].querySelector('img');
+    idx = (i + slides.length) % slides.length;
+    const img = slides[idx].querySelector('img');
     lbImg.src = img.src;
     lbImg.alt = img.alt;
     lbCap.textContent = img.alt;
@@ -195,9 +243,9 @@ if (currentLang !== 'en') setLang(currentLang);
     lb.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
     lbImg.src = '';
+    goTo(idx); // keep the carousel in sync with what was last viewed
   }
 
-  tiles.forEach((t, i) => t.addEventListener('click', () => open(i)));
   lb.querySelectorAll('[data-lb-close]').forEach((el) => el.addEventListener('click', close));
   lb.querySelector('[data-lb-prev]').addEventListener('click', () => show(idx - 1));
   lb.querySelector('[data-lb-next]').addEventListener('click', () => show(idx + 1));
@@ -208,7 +256,7 @@ if (currentLang !== 'en') setLang(currentLang);
     else if (e.key === 'ArrowRight') show(idx + 1);
   });
 
-  // Swipe navigation on touch devices
+  // Swipe within the lightbox on touch devices
   let startX = null;
   lb.addEventListener('touchstart', (e) => { startX = e.changedTouches[0].clientX; }, { passive: true });
   lb.addEventListener('touchend', (e) => {
