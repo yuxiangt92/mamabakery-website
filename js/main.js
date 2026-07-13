@@ -48,6 +48,14 @@ const translations = {
     'gal.tag': 'Gallery',
     'gal.title': 'A little look at our work',
     'gal.desc': 'A few of our recent cakes & cupcakes — naturally sweetened, made fresh to order.',
+    'gal.f.all': 'All',
+    'gal.f.cake': 'Cakes',
+    'gal.f.cupcake': 'Cupcakes',
+    'gal.f.allocc': 'All occasions',
+    'gal.f.birthday': 'Birthday',
+    'gal.f.party': 'Party & Favors',
+    'gal.f.everyday': 'Everyday',
+    'gal.empty': 'No photos in this category yet.',
     'about.tag': 'Our Story',
     'about.title': 'Started in a mama\'s kitchen',
     'about.p1': 'When my own kids couldn\'t have the sugary cakes at birthday parties, I started baking our own — organic, naturally sweetened, and made with the kind of care only a mom gives.',
@@ -103,6 +111,14 @@ const translations = {
     'gal.tag': '作品展示',
     'gal.title': '看看我们的作品',
     'gal.desc': '我们最近的蛋糕和纸杯蛋糕——天然甜味，新鲜定制。',
+    'gal.f.all': '全部',
+    'gal.f.cake': '蛋糕',
+    'gal.f.cupcake': '纸杯蛋糕',
+    'gal.f.allocc': '全部场合',
+    'gal.f.birthday': '生日',
+    'gal.f.party': '派对 & 伴手礼',
+    'gal.f.everyday': '日常',
+    'gal.empty': '这个分类下暂时还没有照片。',
     'about.tag': '我们的故事',
     'about.title': '从一位妈妈的厨房开始',
     'about.p1': '当我的孩子们无法吃生日派对上那些高糖蛋糕时，我开始自己烘焙——有机、天然甜味，带着只有妈妈才有的那份用心。',
@@ -164,3 +180,120 @@ if (langBtn) {
 }
 
 if (currentLang !== 'en') setLang(currentLang);
+
+// Gallery — category filters + lightbox
+(function gallery() {
+  const grid = document.getElementById('galGrid');
+  const filters = document.getElementById('galFilters');
+  if (!grid || !filters) return;
+
+  const tiles = Array.from(grid.querySelectorAll('.g'));
+  const empty = document.getElementById('galEmpty');
+
+  // Preferred display order + i18n label keys. Unknown values still appear
+  // (added after the known ones), so new photos just need data-* attributes.
+  const ORDER = { type: ['cake', 'cupcake'], occasion: ['birthday', 'party', 'everyday'] };
+  const LABEL = {
+    'type:all': 'gal.f.all', 'type:cake': 'gal.f.cake', 'type:cupcake': 'gal.f.cupcake',
+    'occasion:all': 'gal.f.allocc', 'occasion:birthday': 'gal.f.birthday',
+    'occasion:party': 'gal.f.party', 'occasion:everyday': 'gal.f.everyday',
+  };
+  const labelKey = (dim, val) => LABEL[dim + ':' + val] || null;
+
+  const selected = { type: 'all', occasion: 'all' };
+
+  function orderedValues(dim) {
+    const present = new Set(tiles.map((t) => t.dataset[dim]).filter(Boolean));
+    const known = ORDER[dim].filter((v) => present.has(v));
+    const extra = [...present].filter((v) => !ORDER[dim].includes(v)).sort();
+    return ['all', ...known, ...extra];
+  }
+
+  function buildRow(dim) {
+    const vals = orderedValues(dim);
+    if (vals.length <= 2) return; // only "all" + one value → filtering is pointless
+    const row = document.createElement('div');
+    row.className = 'gal-filter-row';
+    row.setAttribute('role', 'group');
+    vals.forEach((val) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'chip-filter';
+      btn.dataset.dim = dim;
+      btn.dataset.val = val;
+      btn.setAttribute('aria-pressed', String(val === 'all'));
+      const key = labelKey(dim, val);
+      if (key) btn.setAttribute('data-i18n', key);
+      const dict = translations[currentLang];
+      btn.textContent = (key && dict[key]) || val;
+      btn.addEventListener('click', () => {
+        selected[dim] = val;
+        row.querySelectorAll('.chip-filter').forEach((c) =>
+          c.setAttribute('aria-pressed', String(c.dataset.val === val)));
+        apply();
+      });
+      row.appendChild(btn);
+    });
+    filters.appendChild(row);
+  }
+
+  function apply() {
+    let shown = 0;
+    tiles.forEach((t) => {
+      const ok =
+        (selected.type === 'all' || t.dataset.type === selected.type) &&
+        (selected.occasion === 'all' || t.dataset.occasion === selected.occasion);
+      t.hidden = !ok;
+      if (ok) shown++;
+    });
+    if (empty) empty.hidden = shown !== 0;
+  }
+
+  buildRow('type');
+  buildRow('occasion');
+  apply();
+
+  // Lightbox
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbCap = document.getElementById('lbCap');
+  let list = [];
+  let idx = 0;
+
+  function visibleTiles() {
+    return tiles.filter((t) => !t.hidden);
+  }
+  function show(i) {
+    list = visibleTiles();
+    if (!list.length) return;
+    idx = (i + list.length) % list.length;
+    const img = list[idx].querySelector('img');
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    lbCap.textContent = img.alt;
+  }
+  function open(tile) {
+    list = visibleTiles();
+    show(list.indexOf(tile));
+    lb.hidden = false;
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function close() {
+    lb.hidden = true;
+    lb.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    lbImg.src = '';
+  }
+
+  tiles.forEach((t) => t.addEventListener('click', () => open(t)));
+  lb.querySelectorAll('[data-lb-close]').forEach((el) => el.addEventListener('click', close));
+  lb.querySelector('[data-lb-prev]').addEventListener('click', () => show(idx - 1));
+  lb.querySelector('[data-lb-next]').addEventListener('click', () => show(idx + 1));
+  document.addEventListener('keydown', (e) => {
+    if (lb.hidden) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') show(idx - 1);
+    else if (e.key === 'ArrowRight') show(idx + 1);
+  });
+})();
