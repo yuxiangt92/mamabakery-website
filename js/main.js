@@ -278,6 +278,13 @@ if (currentLang !== 'en') setLang(currentLang);
     err: { en: 'Something went wrong — please try again, or email us directly.', zh: '发送失败，请再试一次，或直接邮件联系我们。' },
     net: { en: 'Network error — please try again.', zh: '网络错误，请稍后再试。' },
   };
+  T.soon = {
+    en: 'Our online form is coming soon — for now please reach us on Instagram or by email 🌸',
+    zh: '在线表单即将开放，目前请通过 Instagram 私信或邮件联系我们 🌸',
+  };
+  // Until a real Formspree endpoint is set, don't POST — show a friendly note.
+  const notConfigured = form.action.includes('YOUR_FORM_ID');
+
   const t = (k) => T[k][currentLang] || T[k].en;
   function show(msg, ok) {
     status.textContent = msg;
@@ -288,6 +295,7 @@ if (currentLang !== 'en') setLang(currentLang);
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    if (notConfigured) { show(t('soon'), true); return; }
     const btn = form.querySelector('button[type="submit"]');
     status.hidden = true;
     btn.disabled = true;
