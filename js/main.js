@@ -267,6 +267,51 @@ if (currentLang !== 'en') setLang(currentLang);
   }, { passive: true });
 })();
 
+// Contact form — submit to Formspree via fetch, show inline status
+(function contactForm() {
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
+  if (!form || !status) return;
+
+  const T = {
+    ok: { en: "Thank you! We'll get back to you within a day.", zh: '谢谢！我们会在一天内回复您。' },
+    err: { en: 'Something went wrong — please try again, or email us directly.', zh: '发送失败，请再试一次，或直接邮件联系我们。' },
+    net: { en: 'Network error — please try again.', zh: '网络错误，请稍后再试。' },
+  };
+  const t = (k) => T[k][currentLang] || T[k].en;
+  function show(msg, ok) {
+    status.textContent = msg;
+    status.classList.toggle('ok', ok);
+    status.classList.toggle('err', !ok);
+    status.hidden = false;
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    status.hidden = true;
+    btn.disabled = true;
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+      if (res.ok) {
+        form.reset();
+        show(t('ok'), true);
+      } else {
+        const data = await res.json().catch(() => ({}));
+        show(data.errors ? data.errors.map((x) => x.message).join(', ') : t('err'), false);
+      }
+    } catch {
+      show(t('net'), false);
+    } finally {
+      btn.disabled = false;
+    }
+  });
+})();
+
 // Menu — compact horizontal image sliders (arrows, dots, native swipe)
 (function menuSliders() {
   document.querySelectorAll('[data-slider]').forEach((slider) => {
