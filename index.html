@@ -67,7 +67,7 @@
           <div class="m-thumb m1">
             <div class="m-slider" data-slider>
               <div class="m-track">
-                <img src="images/birthday_cake.png" alt="Organic cake topped with fresh berries and mint" loading="lazy" />
+                <img src="images/birthday_cake.jpg" alt="Organic cake topped with fresh berries and mint" loading="lazy" />
                 <img src="images/93287.jpg" alt="Cake with strawberries on top and blueberries around the base" loading="lazy" />
                 <img src="images/gender_reveal.jpg" alt="Gender-reveal cake with fresh berries and 'Boy or Girl' lettering" loading="lazy" />
               </div>
@@ -188,9 +188,10 @@
             <a href="https://pinterest.com/" title="Pinterest" target="_blank" rel="noopener">📌</a>
           </div>
         </div>
-        <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
-          <input type="hidden" name="form-name" value="contact" />
-          <p hidden><label>Don't fill this out if you're human: <input name="bot-field" /></label></p>
+        <!-- Formspree: replace YOUR_FORM_ID in the action with your real form ID from formspree.io -->
+        <form id="contact-form" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+          <input type="hidden" name="_subject" value="New cake inquiry — Mama Bakery" />
+          <p hidden aria-hidden="true"><label>Don't fill this out if you're human: <input name="_gotcha" tabindex="-1" autocomplete="off" /></label></p>
           <label for="cf-name" data-i18n="form.name">Your name</label>
           <input id="cf-name" name="name" type="text" data-i18n-ph="form.name.ph" placeholder="Jane Doe" required />
           <label for="cf-email" data-i18n="form.email">Email</label>
@@ -200,6 +201,7 @@
           <label for="cf-msg" data-i18n="form.msg">Tell us more</label>
           <textarea id="cf-msg" name="message" data-i18n-ph="form.msg.ph" placeholder="Date, theme, number of guests, any allergies…"></textarea>
           <button class="btn" type="submit" data-i18n="form.submit">Send Message</button>
+          <p id="form-status" class="form-status" role="status" aria-live="polite" hidden></p>
         </form>
       </div>
     </div>
