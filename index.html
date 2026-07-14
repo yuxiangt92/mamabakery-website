@@ -64,7 +64,18 @@
       </div>
       <div class="menu-grid">
         <div class="m-card">
-          <div class="m-thumb m1"><img src="images/birthday_cake.png" alt="Organic birthday cake topped with fresh berries and mint" /></div>
+          <div class="m-thumb m1">
+            <div class="m-slider" data-slider>
+              <div class="m-track">
+                <img src="images/birthday_cake.png" alt="Organic cake topped with fresh berries and mint" loading="lazy" />
+                <img src="images/93287.jpg" alt="Cake with strawberries on top and blueberries around the base" loading="lazy" />
+                <img src="images/gender_reveal.jpg" alt="Gender-reveal cake with fresh berries and 'Boy or Girl' lettering" loading="lazy" />
+              </div>
+              <button class="m-arrow m-prev" type="button" aria-label="Previous photo">&#8249;</button>
+              <button class="m-arrow m-next" type="button" aria-label="Next photo">&#8250;</button>
+              <div class="m-dots" aria-hidden="true"></div>
+            </div>
+          </div>
           <div class="m-body">
             <h3 data-i18n="menu.cake.name" data-i18n-html="true">Custom Cakes <span class="price">from $58</span></h3>
             <p data-i18n="menu.cake.desc">Two-layer organic sponge, naturally sweetened, decorated to your theme.</p>
@@ -76,7 +87,18 @@
           </div>
         </div>
         <div class="m-card">
-          <div class="m-thumb m2"><img src="images/IMG_3258.JPG" alt="Fruit-topped cupcakes with strawberry, mango, blueberry and blackberry" /></div>
+          <div class="m-thumb m2">
+            <div class="m-slider" data-slider>
+              <div class="m-track">
+                <img src="images/IMG_3258.JPG" alt="Fruit-topped cupcakes with strawberry, mango, blueberry and blackberry" loading="lazy" />
+                <img src="images/cups_mix.jpg" alt="Cupcakes with mixed fruit toppings — strawberry, grape, mango and blueberry" loading="lazy" />
+                <img src="images/IMG_3252.JPG" alt="Mango and blueberry fruit cupcakes" loading="lazy" />
+              </div>
+              <button class="m-arrow m-prev" type="button" aria-label="Previous photo">&#8249;</button>
+              <button class="m-arrow m-next" type="button" aria-label="Next photo">&#8250;</button>
+              <div class="m-dots" aria-hidden="true"></div>
+            </div>
+          </div>
           <div class="m-body">
             <h3 data-i18n="menu.cup.name" data-i18n-html="true">Cupcakes <span class="price">from $40</span></h3>
             <p data-i18n="menu.cup.desc">Fluffy, lightly sweet, topped with organic whipping cream — perfect for parties &amp; favors.</p>
@@ -98,19 +120,33 @@
         <h2 data-i18n="gal.title">A little look at our work</h2>
         <p data-i18n="gal.desc">A few of our recent cakes &amp; cupcakes — naturally sweetened, made fresh to order.</p>
       </div>
-      <div class="gal-grid">
-        <div class="g"><img src="images/1671.jpg" alt="First-birthday cake with fresh berries and a custom topper" /></div>
-        <div class="g"><img src="images/IMG_4822.JPG" alt="Berry-topped cake with strawberry and mint" /></div>
-        <div class="g"><img src="images/1670.jpg" alt="Chocolate berry cake, overhead view" /></div>
-        <div class="g"><img src="images/IMG_3252.JPG" alt="Box of mango and blueberry fruit cupcakes" /></div>
-        <div class="g"><img src="images/IMG_4829.JPG" alt="Single cupcake topped with berries and mint" /></div>
-        <div class="g"><img src="images/IMG_4975.JPG" alt="Berry and strawberry cake, overhead view" /></div>
-        <div class="g"><img src="images/93287.jpg" alt="Birthday cake with strawberries on top and blueberries around the base" /></div>
-        <div class="g"><img src="images/cake_happy.jpg" alt="Birthday cake with Happy Birthday topper, strawberries and blueberries" /></div>
-        <div class="g"><img src="images/cups_mix.jpg" alt="Cupcakes with mixed fruit toppings — strawberry, grape, mango and blueberry" /></div>
-        <div class="g"><img src="images/cups_box.jpg" alt="Box of cupcakes topped with strawberries, grapes and mango" /></div>
-        <div class="g"><img src="images/cups_plum.jpg" alt="Cupcakes topped with plums and fresh mint" /></div>
+    </div>
+
+    <div class="gal-carousel">
+      <button class="car-nav car-prev" type="button" aria-label="Previous">&#8249;</button>
+      <div class="car-track" id="carTrack" tabindex="0" role="listbox" aria-label="Cake photos">
+        <button class="car-slide" type="button" role="option"><img src="images/1671.jpg" alt="First-birthday cake with fresh berries and a custom topper" loading="lazy" /></button>
+        <button class="car-slide" type="button" role="option"><img src="images/IMG_4822.JPG" alt="Berry-topped cake with strawberry and mint" loading="lazy" /></button>
+        <button class="car-slide" type="button" role="option"><img src="images/gender_reveal.jpg" alt="Gender-reveal cake with fresh berries and 'Boy or Girl' lettering" loading="lazy" /></button>
+        <button class="car-slide" type="button" role="option"><img src="images/IMG_3252.JPG" alt="Box of mango and blueberry fruit cupcakes" loading="lazy" /></button>
+        <button class="car-slide" type="button" role="option"><img src="images/IMG_4829.JPG" alt="Single cupcake topped with berries and mint" loading="lazy" /></button>
+        <button class="car-slide" type="button" role="option"><img src="images/93287.jpg" alt="Birthday cake with strawberries on top and blueberries around the base" loading="lazy" /></button>
+        <button class="car-slide" type="button" role="option"><img src="images/cups_mix.jpg" alt="Cupcakes with mixed fruit toppings — strawberry, grape, mango and blueberry" loading="lazy" /></button>
+        <button class="car-slide" type="button" role="option"><img src="images/cups_plum.jpg" alt="Cupcakes topped with plums and fresh mint" loading="lazy" /></button>
       </div>
+      <button class="car-nav car-next" type="button" aria-label="Next">&#8250;</button>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" hidden aria-hidden="true">
+      <div class="lb-backdrop" data-lb-close></div>
+      <button class="lb-btn lb-close" type="button" aria-label="Close" data-lb-close>&times;</button>
+      <button class="lb-btn lb-prev" type="button" aria-label="Previous" data-lb-prev>&#8249;</button>
+      <figure class="lb-figure" role="dialog" aria-modal="true" aria-label="Photo viewer">
+        <img class="lb-img" id="lbImg" src="" alt="" />
+        <figcaption class="lb-cap" id="lbCap"></figcaption>
+      </figure>
+      <button class="lb-btn lb-next" type="button" aria-label="Next" data-lb-next>&#8250;</button>
     </div>
   </section>
 
