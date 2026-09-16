@@ -8,6 +8,7 @@ Suggested files (referenced by index.html once you add them):
 - about.jpg — the baker / kitchen portrait (Our Story)
 - menu-cakes.jpg, menu-cupcakes.jpg — menu cards
 - tiramisu_cups.jpg — tiramisu cups menu card (shows automatically once added)
+- mousse_cups.jpg — mousse cups menu card (shows automatically once added)
 - gallery-1.jpg … gallery-8.jpg — gallery grid
 
 Until real photos are added, the site shows soft gradient placeholders with an emoji.
