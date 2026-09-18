@@ -94,6 +94,7 @@
           <div class="m-thumb m2">
             <div class="m-slider" data-slider>
               <div class="m-track">
+                <img src="images/strawberry_cupcakes.jpg" alt="Whipped cream cupcakes topped with whole strawberries, with a marshmallow snowman in the middle" loading="lazy" />
                 <img src="images/IMG_3258.JPG" alt="Fruit-topped cupcakes with strawberry, mango, blueberry and blackberry" loading="lazy" />
                 <img src="images/cups_mix.jpg" alt="Cupcakes with mixed fruit toppings — strawberry, grape, mango and blueberry" loading="lazy" />
                 <img src="images/IMG_3252.JPG" alt="Mango and blueberry fruit cupcakes" loading="lazy" />
@@ -111,6 +112,47 @@
             <div class="m-list">
               <div class="row"><span data-i18n="menu.cup.s12">12 cupcakes</span><b>$40</b></div>
               <div class="row"><span data-i18n="menu.cup.s18">18 cupcakes</span><b>$60</b></div>
+            </div>
+          </div>
+        </div>
+        <div class="m-card">
+          <div class="m-thumb m5">
+            <div class="m-slider" data-slider>
+              <div class="m-track">
+                <img src="images/tiramisu_cups.jpg" alt="Tray of individual tiramisu cups dusted with cocoa, each with a small serving fork" loading="lazy" />
+                <img src="images/tiramisu_cake.jpg" alt="Whole tiramisu cake dusted with cocoa and ringed with raspberries, blueberries and mint" loading="lazy" />
+              </div>
+              <button class="m-arrow m-prev" type="button" aria-label="Previous photo">&#8249;</button>
+              <button class="m-arrow m-next" type="button" aria-label="Next photo">&#8250;</button>
+              <div class="m-dots" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div class="m-body">
+            <h3 data-i18n="menu.tira.name" data-i18n-html="true">Tiramisu Cups <span class="price">from $40</span></h3>
+            <p data-i18n="menu.tira.desc">Individual 2 oz cups — espresso-soaked ladyfingers under airy mascarpone cream, dusted with cocoa. Minimum order 12.</p>
+            <div class="m-list">
+              <div class="row"><span data-i18n="menu.tira.s12">12 cups (2 oz each)</span><b>$40</b></div>
+              <div class="row"><span data-i18n="menu.tira.s18">18 cups (2 oz each)</span><b>$60</b></div>
+            </div>
+          </div>
+        </div>
+        <div class="m-card">
+          <div class="m-thumb m6">
+            <img src="images/mango_mousse.jpg" alt="Mango coconut mousse cups layered over a tapioca base, topped with mango, blueberry and mint" loading="lazy" />
+          </div>
+          <div class="m-body">
+            <h3 data-i18n="menu.mou.name" data-i18n-html="true">Mousse Cups <span class="price">from $40</span></h3>
+            <p data-i18n="menu.mou.desc">Silky mousse over a tapioca or biscuit base, in five flavors. Minimum order 12 — mix and match as you like.</p>
+            <ul class="m-flavors">
+              <li data-i18n="menu.mou.f1">Mango Coconut</li>
+              <li data-i18n="menu.mou.f2">Strawberry</li>
+              <li data-i18n="menu.mou.f3">Blueberry + Milk Pudding</li>
+              <li data-i18n="menu.mou.f4">Sea Salt Oreo</li>
+              <li data-i18n="menu.mou.f5">Taro &amp; Red Bean</li>
+            </ul>
+            <div class="m-list">
+              <div class="row"><span data-i18n="menu.mou.s12">12 cups</span><b>$40</b></div>
+              <div class="row"><span data-i18n="menu.mou.s18">18 cups</span><b>$60</b></div>
             </div>
           </div>
         </div>
@@ -133,6 +175,10 @@
       <div class="car-track" id="carTrack" tabindex="0" role="listbox" aria-label="Cake photos">
         <button class="car-slide" type="button" role="option"><img src="images/fig_berry_ganache_cake.jpg" alt="White buttercream cake with a chocolate ganache drip, topped with figs, blackberries, blueberries and mint" loading="lazy" /></button>
         <button class="car-slide" type="button" role="option"><img src="images/police_car_cake.jpg" alt="Kids' birthday cake hand-piped with a blue police car, Oreo wheels and a blueberry border" loading="lazy" /></button>
+        <button class="car-slide" type="button" role="option"><img src="images/tiramisu_cups.jpg" alt="Tray of individual tiramisu cups dusted with cocoa, each with a small serving fork" loading="lazy" /></button>
+        <button class="car-slide" type="button" role="option"><img src="images/mango_mousse.jpg" alt="Mango coconut mousse cups layered over a tapioca base, topped with mango, blueberry and mint" loading="lazy" /></button>
+        <button class="car-slide" type="button" role="option"><img src="images/strawberry_cupcakes.jpg" alt="Whipped cream cupcakes topped with whole strawberries, with a marshmallow snowman in the middle" loading="lazy" /></button>
+        <button class="car-slide" type="button" role="option"><img src="images/tiramisu_cake.jpg" alt="Whole tiramisu cake dusted with cocoa and ringed with raspberries, blueberries and mint" loading="lazy" /></button>
         <button class="car-slide" type="button" role="option"><img src="images/blackberry_cake.jpg" alt="White whipped cream cake piled with fresh blackberries, served with fig and raspberry" loading="lazy" /></button>
         <button class="car-slide" type="button" role="option"><img src="images/grape_birthday_cake.jpg" alt="Birthday cake ringed with green grapes and hand-written chocolate lettering" loading="lazy" /></button>
         <button class="car-slide" type="button" role="option"><img src="images/fig_cherry_cake_side.jpg" alt="Fig and cherry cake styled on a wooden table with flowers in the background" loading="lazy" /></button>
@@ -211,7 +257,7 @@
           <label for="cf-email" data-i18n="form.email">Email</label>
           <input id="cf-email" name="email" type="email" data-i18n-ph="form.email.ph" placeholder="jane@email.com" required />
           <label for="cf-type" data-i18n="form.type">What are we celebrating?</label>
-          <select id="cf-type" name="type"><option data-i18n="form.opt.cake">Birthday cake</option><option data-i18n="form.opt.cup">Cupcakes</option><option data-i18n="form.opt.other">Something else</option></select>
+          <select id="cf-type" name="type"><option data-i18n="form.opt.cake">Birthday cake</option><option data-i18n="form.opt.cup">Cupcakes</option><option data-i18n="form.opt.tira">Tiramisu cups</option><option data-i18n="form.opt.mousse">Mousse cups</option><option data-i18n="form.opt.other">Something else</option></select>
           <label for="cf-msg" data-i18n="form.msg">Tell us more</label>
           <textarea id="cf-msg" name="message" data-i18n-ph="form.msg.ph" placeholder="Date, theme, number of guests, any allergies…"></textarea>
           <button class="btn" type="submit" data-i18n="form.submit">Send Message</button>
