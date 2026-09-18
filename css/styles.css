@@ -99,6 +99,7 @@ footer .fineprint{margin-top:8px}
 .m3{background:linear-gradient(140deg,#F3D9D2,#E9B6A8)}
 .m4{background:linear-gradient(140deg,#E7DECB,#D9C39A)}
 .m5{background:linear-gradient(140deg,#EFE0CB,#A9805E)}
+.m5 img{object-position:center 62%}
 .m6{background:linear-gradient(140deg,#F7E6C8,#E3B7C6)}
 .m-body{padding:22px 24px 26px;flex:1;display:flex;flex-direction:column}
 .m-body h3{font-size:1.4rem;display:flex;justify-content:space-between;align-items:baseline;gap:12px}

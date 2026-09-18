@@ -94,6 +94,7 @@
           <div class="m-thumb m2">
             <div class="m-slider" data-slider>
               <div class="m-track">
+                <img src="images/strawberry_cupcakes.jpg" alt="Whipped cream cupcakes topped with whole strawberries, with a marshmallow snowman in the middle" loading="lazy" />
                 <img src="images/IMG_3258.JPG" alt="Fruit-topped cupcakes with strawberry, mango, blueberry and blackberry" loading="lazy" />
                 <img src="images/cups_mix.jpg" alt="Cupcakes with mixed fruit toppings — strawberry, grape, mango and blueberry" loading="lazy" />
                 <img src="images/IMG_3252.JPG" alt="Mango and blueberry fruit cupcakes" loading="lazy" />
@@ -115,9 +116,16 @@
           </div>
         </div>
         <div class="m-card">
-          <div class="m-thumb m5">🍮
-            <!-- IMAGE SLOT: save the tiramisu photo as images/tiramisu_cups.jpg — it shows automatically -->
-            <img src="images/tiramisu_cups.jpg" alt="Tray of individual tiramisu cups dusted with cocoa, each with a small serving fork" loading="lazy" onerror="this.remove()" />
+          <div class="m-thumb m5">
+            <div class="m-slider" data-slider>
+              <div class="m-track">
+                <img src="images/tiramisu_cups.jpg" alt="Tray of individual tiramisu cups dusted with cocoa, each with a small serving fork" loading="lazy" />
+                <img src="images/tiramisu_cake.jpg" alt="Whole tiramisu cake dusted with cocoa and ringed with raspberries, blueberries and mint" loading="lazy" />
+              </div>
+              <button class="m-arrow m-prev" type="button" aria-label="Previous photo">&#8249;</button>
+              <button class="m-arrow m-next" type="button" aria-label="Next photo">&#8250;</button>
+              <div class="m-dots" aria-hidden="true"></div>
+            </div>
           </div>
           <div class="m-body">
             <h3 data-i18n="menu.tira.name" data-i18n-html="true">Tiramisu Cups <span class="price">from $40</span></h3>
@@ -129,9 +137,8 @@
           </div>
         </div>
         <div class="m-card">
-          <div class="m-thumb m6">🍧
-            <!-- IMAGE SLOT: save a mousse cup photo as images/mousse_cups.jpg — it shows automatically -->
-            <img src="images/mousse_cups.jpg" alt="Individual mousse cups layered over a tapioca and biscuit base" loading="lazy" onerror="this.remove()" />
+          <div class="m-thumb m6">
+            <img src="images/mango_mousse.jpg" alt="Mango coconut mousse cups layered over a tapioca base, topped with mango, blueberry and mint" loading="lazy" />
           </div>
           <div class="m-body">
             <h3 data-i18n="menu.mou.name" data-i18n-html="true">Mousse Cups <span class="price">from $40</span></h3>
@@ -168,6 +175,10 @@
       <div class="car-track" id="carTrack" tabindex="0" role="listbox" aria-label="Cake photos">
         <button class="car-slide" type="button" role="option"><img src="images/fig_berry_ganache_cake.jpg" alt="White buttercream cake with a chocolate ganache drip, topped with figs, blackberries, blueberries and mint" loading="lazy" /></button>
         <button class="car-slide" type="button" role="option"><img src="images/police_car_cake.jpg" alt="Kids' birthday cake hand-piped with a blue police car, Oreo wheels and a blueberry border" loading="lazy" /></button>
+        <button class="car-slide" type="button" role="option"><img src="images/tiramisu_cups.jpg" alt="Tray of individual tiramisu cups dusted with cocoa, each with a small serving fork" loading="lazy" /></button>
+        <button class="car-slide" type="button" role="option"><img src="images/mango_mousse.jpg" alt="Mango coconut mousse cups layered over a tapioca base, topped with mango, blueberry and mint" loading="lazy" /></button>
+        <button class="car-slide" type="button" role="option"><img src="images/strawberry_cupcakes.jpg" alt="Whipped cream cupcakes topped with whole strawberries, with a marshmallow snowman in the middle" loading="lazy" /></button>
+        <button class="car-slide" type="button" role="option"><img src="images/tiramisu_cake.jpg" alt="Whole tiramisu cake dusted with cocoa and ringed with raspberries, blueberries and mint" loading="lazy" /></button>
         <button class="car-slide" type="button" role="option"><img src="images/blackberry_cake.jpg" alt="White whipped cream cake piled with fresh blackberries, served with fig and raspberry" loading="lazy" /></button>
         <button class="car-slide" type="button" role="option"><img src="images/grape_birthday_cake.jpg" alt="Birthday cake ringed with green grapes and hand-written chocolate lettering" loading="lazy" /></button>
         <button class="car-slide" type="button" role="option"><img src="images/fig_cherry_cake_side.jpg" alt="Fig and cherry cake styled on a wooden table with flowers in the background" loading="lazy" /></button>
