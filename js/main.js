@@ -19,6 +19,14 @@ if (navToggle && navLinks) {
 // i18n — language toggle
 const translations = {
   en: {
+    'vac.title': 'We\u2019re away on vacation \u2014 orders are paused',
+    'vac.body': 'The bakery is closed while we travel, so we are <strong>not taking any new orders right now</strong>. Our reopening date is still to be decided \u2014 follow us on Instagram and we\u2019ll announce it there as soon as we know. Thank you for your patience!',
+    'vac.form': '<strong>We\u2019re on vacation \u2014 orders are paused.</strong> Our reopening date is to be announced. You\u2019re welcome to leave a message and we\u2019ll reply once we\u2019re back.',
+    'notice.bar': 'Weekdays only \u2014 we take orders Monday to Friday. Closed Saturday & Sunday.',
+    'notice.menu': '<strong>Weekday orders only.</strong> We bake and take orders Monday through Friday. We are closed on Saturday and Sunday, so we cannot accept weekend orders or weekend pickups.',
+    'notice.form': '<strong>Please note: we only take orders Monday\u2013Friday.</strong> We are closed on Saturday and Sunday. Messages sent over the weekend will be answered on the next weekday.',
+    'contact.days': 'Orders: Monday\u2013Friday only \u00b7 closed weekends',
+    'footer.hours': '📅 Orders taken Monday\u2013Friday only \u00b7 Closed Saturday & Sunday',
     'nav.menu': 'Menu',
     'nav.gallery': 'Gallery',
     'nav.about': 'Our Story',
@@ -89,6 +97,14 @@ const translations = {
     'footer.copy': '© 2026 Mama Bakery',
   },
   zh: {
+    'vac.title': '\u5e97\u4e3b\u4f11\u5047\u4e2d \u2014\u2014 \u6682\u505c\u63a5\u5355',
+    'vac.body': '\u4f11\u5047\u671f\u95f4\u5e97\u94fa\u6682\u505c\u8425\u4e1a\uff0c<strong>\u76ee\u524d\u65e0\u6cd5\u63a5\u53d7\u65b0\u8ba2\u5355</strong>\u3002\u91cd\u65b0\u5f00\u5e97\u7684\u65e5\u671f\u5f85\u5b9a\uff08TBD\uff09\u2014\u2014\u8bf7\u5173\u6ce8\u6211\u4eec\u7684 Instagram\uff0c\u4e00\u6709\u6d88\u606f\u6211\u4eec\u4f1a\u7b2c\u4e00\u65f6\u95f4\u5728\u90a3\u91cc\u516c\u5e03\u3002\u611f\u8c22\u60a8\u7684\u8010\u5fc3\u7b49\u5f85\uff01',
+    'vac.form': '<strong>\u4f11\u5047\u4e2d\uff0c\u6682\u505c\u63a5\u5355\u3002</strong>\u91cd\u65b0\u5f00\u5e97\u65e5\u671f\u5f85\u5b9a\u3002\u60a8\u53ef\u4ee5\u5148\u7559\u8a00\uff0c\u6211\u4eec\u56de\u6765\u540e\u4f1a\u5c3d\u5feb\u56de\u590d\u60a8\u3002',
+    'notice.bar': '\u4ec5\u5de5\u4f5c\u65e5\u63a5\u5355\uff1a\u5468\u4e00\u81f3\u5468\u4e94\u3002\u5468\u516d\u3001\u5468\u65e5\u4f11\u606f\uff0c\u4e0d\u63a5\u5355\u3002',
+    'notice.menu': '<strong>\u4ec5\u5de5\u4f5c\u65e5\u63a5\u5355\u3002</strong>\u6211\u4eec\u53ea\u5728\u5468\u4e00\u81f3\u5468\u4e94\u70d8\u7119\u548c\u63a5\u5355\u3002\u5468\u516d\u3001\u5468\u65e5\u4f11\u606f\uff0c\u56e0\u6b64\u65e0\u6cd5\u63a5\u53d7\u5468\u672b\u7684\u8ba2\u5355\uff0c\u4e5f\u65e0\u6cd5\u5468\u672b\u81ea\u53d6\u3002',
+    'notice.form': '<strong>\u8bf7\u6ce8\u610f\uff1a\u6211\u4eec\u53ea\u5728\u5468\u4e00\u81f3\u5468\u4e94\u63a5\u5355\u3002</strong>\u5468\u516d\u3001\u5468\u65e5\u4f11\u606f\u3002\u5468\u672b\u53d1\u6765\u7684\u6d88\u606f\uff0c\u6211\u4eec\u4f1a\u5728\u4e0b\u4e00\u4e2a\u5de5\u4f5c\u65e5\u56de\u590d\u3002',
+    'contact.days': '\u63a5\u5355\u65f6\u95f4\uff1a\u4ec5\u5468\u4e00\u81f3\u5468\u4e94 \u00b7 \u5468\u672b\u4f11\u606f',
+    'footer.hours': '📅 \u4ec5\u5468\u4e00\u81f3\u5468\u4e94\u63a5\u5355 \u00b7 \u5468\u516d\u3001\u5468\u65e5\u4f11\u606f',
     'nav.menu': '菜单',
     'nav.gallery': '作品展示',
     'nav.about': '我们的故事',

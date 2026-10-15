@@ -13,7 +13,24 @@
 <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+<!-- VACATION BANNER — delete this whole <aside> when the bakery reopens -->
+<aside class="vacation-banner" role="note" aria-label="Vacation notice">
+  <div class="wrap">
+    <span class="ic" aria-hidden="true">🌴</span>
+    <div>
+      <h2 data-i18n="vac.title">We’re away on vacation — orders are paused</h2>
+      <p data-i18n="vac.body" data-i18n-html="true">The bakery is closed while we travel, so we are <strong>not taking any new orders right now</strong>. Our reopening date is still to be decided — follow us on Instagram and we’ll announce it there as soon as we know. Thank you for your patience!</p>
+    </div>
+  </div>
+</aside>
 <header>
+  <!-- ORDER DAYS NOTICE — weekdays only -->
+  <div class="notice-bar" role="note">
+    <div class="wrap">
+      <span class="ic" aria-hidden="true">📅</span>
+      <span data-i18n="notice.bar">Weekdays only — we take orders Monday to Friday. Closed Saturday &amp; Sunday.</span>
+    </div>
+  </div>
   <nav class="wrap">
     <a class="brand" href="#top"><img class="leaf" src="images/logo-badge.png" alt="" aria-hidden="true" /> Mama Bakery</a>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
@@ -61,6 +78,10 @@
         <span class="tag" data-i18n="menu.tag">The Menu</span>
         <h2 data-i18n="menu.title">Sweet things, thoughtfully made</h2>
         <p data-i18n="menu.desc">Every order is custom. Prices below are starting points — tell us your theme and we'll make it magic.</p>
+      </div>
+      <div class="notice-card" role="note">
+        <span class="ic" aria-hidden="true">📅</span>
+        <p data-i18n="notice.menu" data-i18n-html="true"><strong>Weekday orders only.</strong> We bake and take orders Monday through Friday. We are closed on Saturday and Sunday, so we cannot accept weekend orders or weekend pickups.</p>
       </div>
       <div class="menu-grid">
         <div class="m-card">
@@ -241,6 +262,7 @@
         <div class="c-info">
           <div class="line"><span class="ic">📧</span> <a href="mailto:mamabakery.org@gmail.com">mamabakery.org@gmail.com</a></div>
           <div class="line"><span class="ic">📍</span> <span data-i18n="contact.location">West Los Angeles · pickup &amp; local delivery</span></div>
+          <div class="line"><span class="ic">📅</span> <span data-i18n="contact.days">Orders: Monday–Friday only · closed weekends</span></div>
           <p data-i18n="contact.social">Prefer social? Send us a DM — we love seeing your party themes.</p>
           <div class="socials">
             <a href="https://www.instagram.com/mamabakery.la" title="Instagram — @mamabakery.la" aria-label="Mama Bakery on Instagram" target="_blank" rel="noopener">
@@ -255,6 +277,14 @@
         <form id="contact-form" method="POST" action="https://formspree.io/f/xlgqdvlr">
           <input type="hidden" name="_subject" value="New cake inquiry — Mama Bakery" />
           <p hidden aria-hidden="true"><label>Don't fill this out if you're human: <input name="_gotcha" tabindex="-1" autocomplete="off" /></label></p>
+          <div class="notice-card urgent" role="note">
+            <span class="ic" aria-hidden="true">🌴</span>
+            <p data-i18n="vac.form" data-i18n-html="true"><strong>We’re on vacation — orders are paused.</strong> Our reopening date is to be announced. You’re welcome to leave a message and we’ll reply once we’re back.</p>
+          </div>
+          <div class="notice-card" role="note">
+            <span class="ic" aria-hidden="true">📅</span>
+            <p data-i18n="notice.form" data-i18n-html="true"><strong>Please note: we only take orders Monday–Friday.</strong> We are closed on Saturday and Sunday. Messages sent over the weekend will be answered on the next weekday.</p>
+          </div>
           <label for="cf-name" data-i18n="form.name">Your name</label>
           <input id="cf-name" name="name" type="text" data-i18n-ph="form.name.ph" placeholder="Jane Doe" required />
           <label for="cf-email" data-i18n="form.email">Email</label>
@@ -275,6 +305,7 @@
   <div class="wrap">
     <a class="brand" href="#top"><img class="leaf" src="images/logo-badge.png" alt="" aria-hidden="true" /> Mama Bakery</a>
     <p data-i18n="footer.tagline">Organic · Low-Sugar · Made with love in West Los Angeles</p>
+    <p class="footer-hours" data-i18n="footer.hours">📅 Orders taken Monday–Friday only · Closed Saturday &amp; Sunday</p>
     <p class="fineprint" data-i18n="footer.copy">© 2026 Mama Bakery</p>
   </div>
 </footer>

@@ -18,6 +18,18 @@ birthday bakery in West Los Angeles. No build step — open `index.html` in a br
 - **Photos:** add files to `images/`, then replace the matching `<!-- IMAGE SLOT -->`
   placeholder in `index.html` with `<img src="images/your-file.jpg" alt="description">`.
 
+## Order-day notices & the vacation banner
+Both notices are bilingual — the English text sits in `index.html`, the Chinese
+text in the `zh` block of `js/main.js` (matched by the `data-i18n` key).
+
+- **Vacation banner** (dark bar at the very top): the `<aside class="vacation-banner">`
+  at the top of `index.html`, keys `vac.title` / `vac.body`, plus the matching
+  `vac.form` card inside the contact form. **When the bakery reopens, delete that
+  `<aside>` and the `.notice-card.urgent` block in the form** — the `vac.*` entries
+  in `js/main.js` can stay or go. To announce a return date, just edit the text.
+- **Weekdays-only notice** (green bar, menu card, contact form, footer): keys
+  `notice.bar`, `notice.menu`, `notice.form`, `contact.days` and `footer.hours`.
+
 ## Contact form (Netlify Forms)
 The contact form is wired for **Netlify Forms** — it works automatically once the
 site is deployed on Netlify (no backend code, no API keys):
