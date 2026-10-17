@@ -4,7 +4,7 @@
   --shadow:0 18px 40px -22px rgba(74,63,53,.45);
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:124px}
 body{font-family:'Nunito Sans',sans-serif;color:var(--ink);background:var(--cream);line-height:1.7;-webkit-font-smoothing:antialiased}
 h1,h2,h3,.serif{font-family:'Fraunces',serif;font-weight:500;line-height:1.15;letter-spacing:-.01em}
 .wrap{max-width:1140px;margin:0 auto;padding:0 28px}
@@ -27,12 +27,43 @@ nav{display:flex;align-items:center;justify-content:space-between;height:76px;ga
 .lang-toggle:hover{border-color:var(--apricot-deep);color:var(--ink)}
 .nav-toggle{display:none;background:none;border:none;font-size:1.6rem;color:var(--ink);cursor:pointer;line-height:1}
 @media(max-width:860px){
-  .navlinks{display:none;position:absolute;top:76px;left:0;right:0;flex-direction:column;gap:0;background:var(--cream);border-bottom:1px solid var(--oat);margin-left:0;padding:8px 0}
+  .navlinks{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--cream);border-bottom:1px solid var(--oat);margin-left:0;padding:8px 0}
   .navlinks.open{display:flex}
   .navlinks a{padding:14px 28px;border-top:1px solid var(--oat)}
   .nav-toggle{display:block;margin-left:auto}
   .nav-cta{display:none}
   .lang-toggle{order:1;padding:4px 10px;font-size:.72rem}
+}
+
+/* VACATION BANNER — top of page, scrolls away above the sticky header */
+.vacation-banner{background:var(--ink);color:#fff;border-bottom:3px solid var(--apricot-deep)}
+.vacation-banner .wrap{display:flex;align-items:flex-start;gap:16px;padding-top:22px;padding-bottom:22px}
+.vacation-banner .ic{font-size:1.75rem;line-height:1.25;flex-shrink:0}
+.vacation-banner h2{font-size:1.3rem;color:#fff;margin-bottom:7px}
+.vacation-banner p{font-size:.96rem;color:rgba(255,255,255,.84);max-width:78ch}
+.vacation-banner strong{color:#fff}
+
+/* ORDER DAYS NOTICE — weekdays only */
+.notice-bar{background:var(--sage-deep);color:#fff}
+.notice-bar .wrap{display:flex;align-items:center;justify-content:center;gap:10px;padding-top:10px;padding-bottom:10px;text-align:center;font-size:.92rem;font-weight:700}
+.notice-bar .ic{flex-shrink:0}
+.notice-card{display:flex;align-items:flex-start;gap:14px;max-width:720px;margin:0 auto 44px;padding:16px 22px;background:#fff;border:1.5px solid var(--apricot);border-left:6px solid var(--apricot-deep);border-radius:16px;text-align:left;box-shadow:var(--shadow)}
+.notice-card .ic{font-size:1.25rem;line-height:1.5;flex-shrink:0}
+.notice-card p{margin:0;font-size:.95rem;color:var(--ink)}
+.notice-card strong{color:var(--apricot-deep)}
+.contact .notice-card{max-width:none;margin:0 0 22px;padding:14px 18px;background:var(--cream);box-shadow:none}
+.notice-card.urgent{border-color:var(--ink);border-left-color:var(--ink)}
+.notice-card.urgent strong{color:var(--ink)}
+.footer-hours{margin-top:10px;font-weight:700;color:#fff !important}
+@media(max-width:540px){
+  html{scroll-padding-top:150px}
+  .notice-bar .wrap{font-size:.82rem;gap:8px;padding-top:9px;padding-bottom:9px}
+  .vacation-banner .wrap{gap:12px;padding-top:18px;padding-bottom:18px}
+  .vacation-banner .ic{font-size:1.4rem}
+  .vacation-banner h2{font-size:1.1rem}
+  .vacation-banner p{font-size:.88rem}
+  .notice-card{gap:10px;padding:14px 16px;margin-bottom:32px}
+  .notice-card p{font-size:.88rem}
 }
 
 /* SHARED SECTION SCAFFOLD */
