@@ -24,9 +24,18 @@ text in the `zh` block of `js/main.js` (matched by the `data-i18n` key).
 
 - **Vacation banner** (dark bar at the very top): the `<aside class="vacation-banner">`
   at the top of `index.html`, keys `vac.title` / `vac.body`, plus the matching
-  `vac.form` card inside the contact form. **When the bakery reopens, delete that
-  `<aside>` and the `.notice-card.urgent` block in the form** — the `vac.*` entries
-  in `js/main.js` can stay or go. To announce a return date, just edit the text.
+  `vac.form` card inside the contact form. To announce a return date, just edit
+  the text.
+
+  **Reopening checklist** — three things to undo:
+  1. Delete the `<aside class="vacation-banner">` block at the top of `index.html`.
+  2. Delete the `.notice-card.urgent` block at the top of the contact form.
+  3. Put `contact.desc` back to “Tell us about the birthday and we'll get back to
+     you within a day.” / “告诉我们关于生日派对的想法，我们会在一天内回复您。”
+     (in `index.html` and in both language blocks of `js/main.js`).
+
+  The `vac.*` entries in `js/main.js` can stay — unused keys are harmless, and
+  they'll be there for the next holiday.
 - **Weekdays-only notice** (green bar, menu card, contact form, footer): keys
   `notice.bar`, `notice.menu`, `notice.form`, `contact.days` and `footer.hours`.
 
